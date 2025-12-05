@@ -1,0 +1,8 @@
+{
+  "api_url": {
+    "description": "调用API地址",
+    "type": "string",
+    "hint": "例如：https://lab.magiconch.com/api/nbnhhsh/guess",
+    "default": "https://lab.magiconch.com/api/nbnhhsh/guess"
+  }
+}
