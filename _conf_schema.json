@@ -4,5 +4,11 @@
     "type": "string",
     "hint": "例如：https://lab.magiconch.com/api/nbnhhsh/guess",
     "default": "https://lab.magiconch.com/api/nbnhhsh/guess"
+  },
+  "ignore_prefix": {
+    "type": "bool",
+    "description": "是否忽略前缀，开启后直接通过abbr hhsh触发不需要发送命令前缀",
+    "hint": "默认不忽略。",
+    "default": false
   }
 }
