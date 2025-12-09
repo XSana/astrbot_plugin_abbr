@@ -3,14 +3,13 @@ from typing import List, Dict, Any
 
 import httpx
 
-from astrbot.api import logger
+from astrbot.api import logger, llm_tool
 from astrbot.api.event import AstrMessageEvent, filter
 from astrbot.api.star import Context, Star, register
 from astrbot.core import AstrBotConfig
-from astrbot.core.provider.register import llm_tools
 
 
-@register("abbr", "XSana", "调用nbnhhsh，获取缩写", "1.2.0")
+@register("abbr", "XSana", "调用nbnhhsh，获取缩写", "1.2.1")
 class EatWhat(Star):
     def __init__(self, context: Context, config: AstrBotConfig):
         super().__init__(context)
@@ -63,10 +62,10 @@ class EatWhat(Star):
         yield event.plain_result(result_text)
         event.stop_event()
 
-    @llm_tools("abbr")
+    @llm_tool("abbr")
     async def abbr_tool(self, event: AstrMessageEvent, text: str = None):
-        """Call this tool when the user is asking for the meaning of an abbreviation.
-
+        """
+        Call this tool when the user is asking for the meaning of an abbreviation.
         Use this tool in (at least) the following situations:
         1) The user explicitly asks for the meaning / explanation of a short string that
            looks like an abbreviation, e.g.:
@@ -74,7 +73,6 @@ class EatWhat(Star):
            - "帮我查一下zssm"
            - "解释一下这个缩写：ysmd"
            - "zssm是什么"
-
         2) The user sends a short token mainly composed of letters and/or digits (e.g. "nb666",
            "xswl", "zssm") and asks what it means, how to read it, or asks for an explanation.
 

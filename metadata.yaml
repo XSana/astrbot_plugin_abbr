@@ -1,6 +1,6 @@
 name: astrbot_plugin_abbr
 display_name: 能不能好好说话
 desc: 调用nbnhhsh，获取缩写
-version: v1.2.0
+version: v1.2.1
 author: XSana
 repo: https://github.com/XSana/astrbot_plugin_abbr
