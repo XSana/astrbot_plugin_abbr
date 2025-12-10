@@ -10,7 +10,7 @@ from astrbot.core import AstrBotConfig
 
 
 @register("abbr", "XSana", "调用nbnhhsh，获取缩写", "1.2.1")
-class EatWhat(Star):
+class Abbr(Star):
     def __init__(self, context: Context, config: AstrBotConfig):
         super().__init__(context)
         self.config = config
